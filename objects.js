@@ -45,3 +45,24 @@ const sredniyBall = (obshayaSumma / students.length).toFixed(2);
 console.log(sredniyBall);
 
 
+function mergeUsers(user1, user2) {
+  const mergde = {...user1, ...user2}
+  return mergde
+}
+
+const u1 = { name: "Иван", age: 20, city: "Казань" }
+const u2 = { name: "Иван Петров", email: "ivan@mail.ru", city: "Москва" }
+
+const result = mergeUsers(u1, u2)
+console.log(result)
+
+
+function countByField(arr, f) {
+  return arr.reduce((acc, c) => {
+    const k = c[f]
+    acc[k] = (acc[k] || 0) + 1
+    return acc
+  }, {})
+}
+
+console.log(countByField(students, "passed"))
